@@ -22,41 +22,28 @@ namespace prntsc_viewer_because_cloudflare_is_a_bitch
         {
             InitializeComponent();
         }
-        public string DownloadImage(string id)
+        public string GrabUrl(string input, bool IsId)
         {
             client.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36");
 
-            string prntscHtml = client.DownloadString("https://prnt.sc/" + id);
+            string prntscHtml;
+            switch (IsId)
+            {
+                case false:
+                    prntscHtml = client.DownloadString(input); break;
+                default:
+                    prntscHtml = client.DownloadString("https://prnt.sc/" + input); break;
+            }
+
             Regex prntscRegex = new Regex(@"https://image\.prntscr\.com/image/([a-zA-Z0-9_-]+)\.png");
             Regex imgurRegex = new Regex(@"https://i\.imgur\.com/([a-zA-Z0-9_-]+)\.png");
+
             bool prntscMatches = prntscRegex.IsMatch(prntscHtml);
+
             string imageUrl;
             if (prntscMatches) { imageUrl = prntscRegex.Match(prntscHtml).ToString(); }
             else { imageUrl = imgurRegex.Match(prntscHtml).ToString(); }
 
-
-            client.Headers.Add("Access-Control-Allow-Origin", "*");
-            client.Headers.Add("Access-Control-Allow-Methods", "GET, OPTIONS");
-            client.Headers.Add("Access-Control-Allow-Headers", "DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type");
-
-            /*try
-            {
-                imageBytes = client.DownloadData(imageUrl.Value);
-            }
-            catch (WebException ex)
-            {
-                WebException Exception = ex;
-                HttpWebResponse Response = (HttpWebResponse)Exception.Response;
-                StreamReader WebStream = new StreamReader(Response.GetResponseStream(), System.Text.Encoding.GetEncoding("utf-8"));
-                imageBytes = Encoding.UTF8.GetBytes(WebStream.ReadToEnd());
-                Debug.WriteLine(imageBytes);
-                Debug.WriteLine(WebStream.ReadToEnd());
-            }*/
-            //HttpWebRequest imageRequest = (HttpWebRequest)WebRequest.Create(imageUrl.Value);
-            //imageRequest.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36";
-            //imageRequest.UseDefaultCredentials = true;
-            //HttpWebResponse imageResponse = (HttpWebResponse)imageRequest.GetResponse();
-            //Stream imageStream = imageResponse.GetResponseStream();
             switch (imageUrl)
             {
                 case "":
@@ -65,33 +52,34 @@ namespace prntsc_viewer_because_cloudflare_is_a_bitch
                     return imageUrl;
             }
         }
-
-        private void idInput_KeyPress(object sender, KeyPressEventArgs e)
+        public void ManageInput(string input, char key, bool IsId)
         {
-            if (e.KeyChar == (char)Keys.Enter)
+            if (key == (char)Keys.Enter)
             {
-                urlLabel.Text = DownloadImage(idInput.Text);
-                ActiveForm.Width = urlLabel.Width + 33;
-                ActiveForm.Height = 113;
-                if (checkBox1.Checked) { Process.Start(urlLabel.Text); }
+                UrlLabel.Text = GrabUrl(input, IsId);
+                ActiveForm.Width = UrlLabel.Width + 33;
+                ActiveForm.Height = 133;
+                if (BrowserCheckbox.Checked) { Process.Start(GrabUrl(input, IsId)); }
             }
         }
-
-        private void linkInput_KeyPress(object sender, KeyPressEventArgs e)
+        private void IdInput_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                urlLabel.Text = DownloadImage(linkInput.Text);
-                ActiveForm.Width = urlLabel.Width + 33;
-                ActiveForm.Height = 113;
-                Process.Start(urlLabel.Text);
-                if (checkBox1.Checked) { Process.Start(urlLabel.Text); }
-            }
+            ManageInput(IdInput.Text, e.KeyChar, true);
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void LinkInput_KeyPress(object sender, KeyPressEventArgs e)
         {
+            ManageInput(LinkInput.Text, e.KeyChar, false);
+        }
 
+        private void IdButton_Click(object sender, EventArgs e)
+        {
+            ManageInput(IdInput.Text, (char)Keys.Enter, true);
+        }
+
+        private void LinkButton_Click(object sender, EventArgs e)
+        {
+            ManageInput(LinkInput.Text, (char)Keys.Enter, false);
         }
     }
 }

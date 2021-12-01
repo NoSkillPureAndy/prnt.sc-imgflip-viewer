@@ -29,62 +29,86 @@ namespace prntsc_viewer_because_cloudflare_is_a_bitch
         /// </summary>
         private void InitializeComponent()
         {
-            this.idInput = new System.Windows.Forms.TextBox();
-            this.linkInput = new System.Windows.Forms.TextBox();
-            this.urlLabel = new System.Windows.Forms.LinkLabel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.IdInput = new System.Windows.Forms.TextBox();
+            this.LinkInput = new System.Windows.Forms.TextBox();
+            this.UrlLabel = new System.Windows.Forms.LinkLabel();
+            this.BrowserCheckbox = new System.Windows.Forms.CheckBox();
+            this.IdButton = new System.Windows.Forms.Button();
+            this.LinkButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // idInput
+            // IdInput
             // 
-            this.idInput.Location = new System.Drawing.Point(12, 12);
-            this.idInput.Name = "idInput";
-            this.idInput.Size = new System.Drawing.Size(70, 20);
-            this.idInput.TabIndex = 0;
-            this.idInput.Text = "ID Input";
-            this.idInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idInput_KeyPress);
+            this.IdInput.Location = new System.Drawing.Point(12, 32);
+            this.IdInput.Name = "IdInput";
+            this.IdInput.Size = new System.Drawing.Size(70, 20);
+            this.IdInput.TabIndex = 0;
+            this.IdInput.Text = "ID Input";
+            this.IdInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IdInput_KeyPress);
             // 
-            // linkInput
+            // LinkInput
             // 
-            this.linkInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkInput.Location = new System.Drawing.Point(182, 12);
-            this.linkInput.Name = "linkInput";
-            this.linkInput.Size = new System.Drawing.Size(70, 20);
-            this.linkInput.TabIndex = 1;
-            this.linkInput.Text = "Link Input";
-            this.linkInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.linkInput_KeyPress);
+            this.LinkInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LinkInput.Location = new System.Drawing.Point(182, 32);
+            this.LinkInput.Name = "LinkInput";
+            this.LinkInput.Size = new System.Drawing.Size(70, 20);
+            this.LinkInput.TabIndex = 1;
+            this.LinkInput.Text = "Link Input";
+            this.LinkInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LinkInput_KeyPress);
             // 
-            // urlLabel
+            // UrlLabel
             // 
-            this.urlLabel.AutoSize = true;
-            this.urlLabel.Location = new System.Drawing.Point(9, 35);
-            this.urlLabel.Name = "urlLabel";
-            this.urlLabel.Size = new System.Drawing.Size(47, 13);
-            this.urlLabel.TabIndex = 4;
-            this.urlLabel.TabStop = true;
-            this.urlLabel.Text = "link here";
-            this.urlLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.UrlLabel.AutoSize = true;
+            this.UrlLabel.Location = new System.Drawing.Point(9, 55);
+            this.UrlLabel.Name = "UrlLabel";
+            this.UrlLabel.Size = new System.Drawing.Size(47, 13);
+            this.UrlLabel.TabIndex = 4;
+            this.UrlLabel.TabStop = true;
+            this.UrlLabel.Text = "link here";
+            this.UrlLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // checkBox1
+            // BrowserCheckbox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(12, 51);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(126, 17);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Auto-open in browser";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.BrowserCheckbox.AutoSize = true;
+            this.BrowserCheckbox.Location = new System.Drawing.Point(12, 71);
+            this.BrowserCheckbox.Name = "BrowserCheckbox";
+            this.BrowserCheckbox.Size = new System.Drawing.Size(126, 17);
+            this.BrowserCheckbox.TabIndex = 5;
+            this.BrowserCheckbox.Text = "Auto-open in browser";
+            this.BrowserCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // IdButton
+            // 
+            this.IdButton.Location = new System.Drawing.Point(12, 6);
+            this.IdButton.Name = "IdButton";
+            this.IdButton.Size = new System.Drawing.Size(70, 20);
+            this.IdButton.TabIndex = 6;
+            this.IdButton.Text = "View ID";
+            this.IdButton.UseVisualStyleBackColor = true;
+            this.IdButton.Click += new System.EventHandler(this.IdButton_Click);
+            // 
+            // LinkButton
+            // 
+            this.LinkButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LinkButton.Location = new System.Drawing.Point(182, 6);
+            this.LinkButton.Name = "LinkButton";
+            this.LinkButton.Size = new System.Drawing.Size(70, 20);
+            this.LinkButton.TabIndex = 7;
+            this.LinkButton.Text = "View Link";
+            this.LinkButton.UseVisualStyleBackColor = true;
+            this.LinkButton.Click += new System.EventHandler(this.LinkButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(264, 74);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.urlLabel);
-            this.Controls.Add(this.linkInput);
-            this.Controls.Add(this.idInput);
+            this.ClientSize = new System.Drawing.Size(264, 94);
+            this.Controls.Add(this.LinkButton);
+            this.Controls.Add(this.IdButton);
+            this.Controls.Add(this.BrowserCheckbox);
+            this.Controls.Add(this.UrlLabel);
+            this.Controls.Add(this.LinkInput);
+            this.Controls.Add(this.IdInput);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -94,10 +118,12 @@ namespace prntsc_viewer_because_cloudflare_is_a_bitch
 
         #endregion
 
-        private System.Windows.Forms.TextBox idInput;
-        private System.Windows.Forms.TextBox linkInput;
-        private System.Windows.Forms.LinkLabel urlLabel;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox IdInput;
+        private System.Windows.Forms.TextBox LinkInput;
+        private System.Windows.Forms.LinkLabel UrlLabel;
+        private System.Windows.Forms.CheckBox BrowserCheckbox;
+        private System.Windows.Forms.Button IdButton;
+        private System.Windows.Forms.Button LinkButton;
     }
 }
 
