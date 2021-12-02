@@ -79,9 +79,9 @@ namespace prntsc_viewer_because_cloudflare_is_a_bitch
             // 
             // IdButton
             // 
-            this.IdButton.Location = new System.Drawing.Point(12, 6);
+            this.IdButton.Location = new System.Drawing.Point(11, 5);
             this.IdButton.Name = "IdButton";
-            this.IdButton.Size = new System.Drawing.Size(70, 20);
+            this.IdButton.Size = new System.Drawing.Size(72, 22);
             this.IdButton.TabIndex = 6;
             this.IdButton.Text = "View ID";
             this.IdButton.UseVisualStyleBackColor = true;
@@ -90,9 +90,9 @@ namespace prntsc_viewer_because_cloudflare_is_a_bitch
             // LinkButton
             // 
             this.LinkButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LinkButton.Location = new System.Drawing.Point(182, 6);
+            this.LinkButton.Location = new System.Drawing.Point(181, 5);
             this.LinkButton.Name = "LinkButton";
-            this.LinkButton.Size = new System.Drawing.Size(70, 20);
+            this.LinkButton.Size = new System.Drawing.Size(72, 22);
             this.LinkButton.TabIndex = 7;
             this.LinkButton.Text = "View Link";
             this.LinkButton.UseVisualStyleBackColor = true;
