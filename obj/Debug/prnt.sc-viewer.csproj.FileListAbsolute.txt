@@ -12,3 +12,7 @@ C:\Users\me\source\repos\prnt.sc-viewer\bin\Debug\System.Diagnostics.DiagnosticS
 C:\Users\me\source\repos\prnt.sc-viewer\obj\Debug\prnt.sc-viewer.csproj.CopyComplete
 C:\Users\me\source\repos\prnt.sc-viewer\obj\Debug\prntsc viewer because cloudflare is a bitch.exe
 C:\Users\me\source\repos\prnt.sc-viewer\obj\Debug\prntsc viewer because cloudflare is a bitch.pdb
+C:\Users\me\source\repos\prnt.sc-viewer\bin\Debug\prntsc viewer because cloudflare is a bitch.exe.manifest
+C:\Users\me\source\repos\prnt.sc-viewer\bin\Debug\prntsc viewer because cloudflare is a bitch.application
+C:\Users\me\source\repos\prnt.sc-viewer\obj\Debug\prntsc viewer because cloudflare is a bitch.exe.manifest
+C:\Users\me\source\repos\prnt.sc-viewer\obj\Debug\prntsc viewer because cloudflare is a bitch.application
