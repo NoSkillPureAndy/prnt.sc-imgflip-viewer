@@ -1,5 +1,5 @@
 ﻿
-namespace prntsc_viewer_because_cloudflare_is_a_bitch
+namespace prntsc_imgflip_viewer
 {
     partial class Form1
     {
@@ -35,6 +35,8 @@ namespace prntsc_viewer_because_cloudflare_is_a_bitch
             this.BrowserCheckbox = new System.Windows.Forms.CheckBox();
             this.IdButton = new System.Windows.Forms.Button();
             this.LinkButton = new System.Windows.Forms.Button();
+            this.ModeButton = new System.Windows.Forms.Button();
+            this.ModeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // IdInput
@@ -98,11 +100,35 @@ namespace prntsc_viewer_because_cloudflare_is_a_bitch
             this.LinkButton.UseVisualStyleBackColor = true;
             this.LinkButton.Click += new System.EventHandler(this.LinkButton_Click);
             // 
+            // ModeButton
+            // 
+            this.ModeButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ModeButton.Location = new System.Drawing.Point(88, 31);
+            this.ModeButton.Name = "ModeButton";
+            this.ModeButton.Size = new System.Drawing.Size(88, 22);
+            this.ModeButton.TabIndex = 8;
+            this.ModeButton.Text = "Change Mode";
+            this.ModeButton.UseVisualStyleBackColor = true;
+            this.ModeButton.Click += new System.EventHandler(this.ModeButton_Click);
+            // 
+            // ModeLabel
+            // 
+            this.ModeLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ModeLabel.AutoSize = true;
+            this.ModeLabel.Location = new System.Drawing.Point(96, 10);
+            this.ModeLabel.Name = "ModeLabel";
+            this.ModeLabel.Size = new System.Drawing.Size(72, 13);
+            this.ModeLabel.TabIndex = 9;
+            this.ModeLabel.Text = "Mode: prnt.sc";
+            this.ModeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(264, 94);
+            this.Controls.Add(this.ModeLabel);
+            this.Controls.Add(this.ModeButton);
             this.Controls.Add(this.LinkButton);
             this.Controls.Add(this.IdButton);
             this.Controls.Add(this.BrowserCheckbox);
@@ -124,6 +150,8 @@ namespace prntsc_viewer_because_cloudflare_is_a_bitch
         private System.Windows.Forms.CheckBox BrowserCheckbox;
         private System.Windows.Forms.Button IdButton;
         private System.Windows.Forms.Button LinkButton;
+        private System.Windows.Forms.Button ModeButton;
+        private System.Windows.Forms.Label ModeLabel;
     }
 }
 

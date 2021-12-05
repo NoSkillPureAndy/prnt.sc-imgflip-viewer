@@ -13,40 +13,61 @@ using System.Text;
 using System.Diagnostics;
 using System.Net.Http;
 
-namespace prntsc_viewer_because_cloudflare_is_a_bitch
+namespace prntsc_imgflip_viewer
 {
     public partial class Form1 : Form
     {
+        bool isPrntsc = true;
         WebClient client = new WebClient();
+        Regex prntscRegex = new Regex(@"https://image\.prntscr\.com/image/([a-zA-Z0-9_-]+)\.[a-zA-Z]+");
+        Regex imgurRegex = new Regex(@"https://i\.imgur\.com/([a-zA-Z0-9_-]+)\.[a-zA-Z]+");
+        Regex imgflipRegex = new Regex(@"//i\.imgflip\.com/([a-zA-Z0-9_-]+)\.[a-zA-Z]+");
         public Form1()
         {
             InitializeComponent();
         }
         public string GrabUrl(string input, bool IsId)
         {
-            string prntscHtml;
+            string downloadedHtml;
             string imageUrl;
             client.Headers.Add("user-agent", "real browser for real people");
 
-            if (IsId) prntscHtml = client.DownloadString("https://prnt.sc/" + input);
-            else prntscHtml = client.DownloadString(input);
-            
-            //this is the regex for the image url in the html
-            Regex prntscRegex = new Regex(@"https://image\.prntscr\.com/image/([a-zA-Z0-9_-]+)\.[a-zA-Z]+");
-            Regex imgurRegex = new Regex(@"https://i\.imgur\.com/([a-zA-Z0-9_-]+)\.[a-zA-Z]+");
+            if (isPrntsc)
+            {
+                if (IsId) downloadedHtml = client.DownloadString("https://prnt.sc/" + input);
+                else downloadedHtml = client.DownloadString(input);
 
-            if (prntscRegex.IsMatch(prntscHtml)) imageUrl = prntscRegex.Match(prntscHtml).ToString(); //prnt.sc
-            else imageUrl = imgurRegex.Match(prntscHtml).ToString(); //imgur
+                if (prntscRegex.IsMatch(downloadedHtml)) imageUrl = prntscRegex.Match(downloadedHtml).ToString();
+                else imageUrl = imgurRegex.Match(downloadedHtml).ToString();
 
-            return imageUrl.Length > 0 ? imageUrl : "No image link found. I am personally attacked by and blame you for this, " + Environment.UserName + ".";
+                return imageUrl.Length > 0 ? imageUrl : "No image link found. I am personally attacked by and blame you for this, " + Environment.UserName + ".";
+            }
+            else
+            {
+                if (IsId) {
+                    try
+                    {
+                        downloadedHtml = client.DownloadString("https://imgflip.com/i/" + input);
+                    }
+                    catch
+                    {
+                        return "No image link found. I am personally attacked by and blame you for this, " + Environment.UserName + ".";
+                    }
+                } else downloadedHtml = client.DownloadString(input);
+
+                return "https:" + imgflipRegex.Match(downloadedHtml).ToString();
+            }
         }
         public void ManageInput(string input, char key, bool IsId)
         {
             if (key == (char)Keys.Enter)
             {
                 UrlLabel.Text = GrabUrl(input, IsId);
-                ActiveForm.Width = UrlLabel.Width + 33;
+
+                if (UrlLabel.Width + 33 < 286) ActiveForm.Width = 286;
+                else ActiveForm.Width = UrlLabel.Width + 33;
                 ActiveForm.Height = 133;
+
                 if (BrowserCheckbox.Checked && UrlLabel.Text != "No image link found. I am personally attacked by and blame you for this, " + Environment.UserName + ".")
                 {
                     Process.Start(UrlLabel.Text);
@@ -71,6 +92,13 @@ namespace prntsc_viewer_because_cloudflare_is_a_bitch
         private void LinkButton_Click(object sender, EventArgs e)
         {
             ManageInput(LinkInput.Text, (char)Keys.Enter, false);
+        }
+
+        private void ModeButton_Click(object sender, EventArgs e)
+        {
+            isPrntsc = !isPrntsc;
+            if (isPrntsc) ModeLabel.Text = "Mode: prnt.sc";
+            else ModeLabel.Text = "Mode: imgflip";
         }
     }
 }

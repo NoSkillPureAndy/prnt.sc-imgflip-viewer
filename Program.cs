@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace prntsc_viewer_because_cloudflare_is_a_bitch
+namespace prntsc_imgflip_viewer
 {
     static class Program
     {

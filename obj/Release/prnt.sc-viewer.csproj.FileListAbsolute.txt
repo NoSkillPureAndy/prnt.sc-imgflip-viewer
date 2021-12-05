@@ -1,0 +1,17 @@
+C:\Users\me\source\repos\prnt.sc-viewer\bin\Release\prntsc viewer because cloudflare is a bitch.exe.config
+C:\Users\me\source\repos\prnt.sc-viewer\bin\Release\prntsc viewer because cloudflare is a bitch.exe.manifest
+C:\Users\me\source\repos\prnt.sc-viewer\bin\Release\prntsc viewer because cloudflare is a bitch.application
+C:\Users\me\source\repos\prnt.sc-viewer\bin\Release\prntsc viewer because cloudflare is a bitch.exe
+C:\Users\me\source\repos\prnt.sc-viewer\bin\Release\prntsc viewer because cloudflare is a bitch.pdb
+C:\Users\me\source\repos\prnt.sc-viewer\bin\Release\System.Diagnostics.DiagnosticSource.dll
+C:\Users\me\source\repos\prnt.sc-viewer\bin\Release\System.Diagnostics.DiagnosticSource.xml
+C:\Users\me\source\repos\prnt.sc-viewer\obj\Release\prntsc_viewer_because_cloudflare_is_a_bitch.Form1.resources
+C:\Users\me\source\repos\prnt.sc-viewer\obj\Release\prntsc_viewer_because_cloudflare_is_a_bitch.Properties.Resources.resources
+C:\Users\me\source\repos\prnt.sc-viewer\obj\Release\prnt.sc-viewer.csproj.GenerateResource.cache
+C:\Users\me\source\repos\prnt.sc-viewer\obj\Release\prnt.sc-viewer.csproj.CoreCompileInputs.cache
+C:\Users\me\source\repos\prnt.sc-viewer\obj\Release\prntsc viewer because cloudflare is a bitch.exe.manifest
+C:\Users\me\source\repos\prnt.sc-viewer\obj\Release\prntsc viewer because cloudflare is a bitch.application
+C:\Users\me\source\repos\prnt.sc-viewer\obj\Release\prnt.sc-viewer.csproj.CopyComplete
+C:\Users\me\source\repos\prnt.sc-viewer\obj\Release\prntsc viewer because cloudflare is a bitch.exe
+C:\Users\me\source\repos\prnt.sc-viewer\obj\Release\prntsc viewer because cloudflare is a bitch.pdb
+C:\Users\me\source\repos\prnt.sc-viewer\obj\Release\prnt.sc-viewer.csproj.AssemblyReference.cache

@@ -1,15 +1,16 @@
-﻿using System.Reflection;
+﻿using System.Resources;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("prntsc viewer because cloudflare is a bitch")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("prnt.sc and imgflip viewer")]
+[assembly: AssemblyDescription("views prnt.sc and imgflip links")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("prntsc viewer because cloudflare is a bitch")]
+[assembly: AssemblyCompany("owowhat")]
+[assembly: AssemblyProduct("prnt.sc and imgflip viewer")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +21,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c96c9865-48e5-4b9b-bdc4-4db2835f0da7")]
+[assembly: Guid("12345678-48e5-4b9b-bdc4-4db2835f0da7")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -34,3 +35,4 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: NeutralResourcesLanguage("")]
