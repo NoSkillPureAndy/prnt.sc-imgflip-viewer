@@ -24,33 +24,21 @@ namespace prntsc_viewer_because_cloudflare_is_a_bitch
         }
         public string GrabUrl(string input, bool IsId)
         {
-            client.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36");
-
             string prntscHtml;
-            switch (IsId)
-            {
-                case false:
-                    prntscHtml = client.DownloadString(input); break;
-                default:
-                    prntscHtml = client.DownloadString("https://prnt.sc/" + input); break;
-            }
-
-            Regex prntscRegex = new Regex(@"https://image\.prntscr\.com/image/([a-zA-Z0-9_-]+)\.png");
-            Regex imgurRegex = new Regex(@"https://i\.imgur\.com/([a-zA-Z0-9_-]+)\.png");
-
-            bool prntscMatches = prntscRegex.IsMatch(prntscHtml);
-
             string imageUrl;
-            if (prntscMatches) { imageUrl = prntscRegex.Match(prntscHtml).ToString(); }
-            else { imageUrl = imgurRegex.Match(prntscHtml).ToString(); }
+            client.Headers.Add("user-agent", "real browser for real people");
 
-            switch (imageUrl)
-            {
-                case "":
-                    return "Link returned with nothing!";
-                default:
-                    return imageUrl;
-            }
+            if (IsId) prntscHtml = client.DownloadString("https://prnt.sc/" + input);
+            else prntscHtml = client.DownloadString(input);
+            
+            //this is the regex for the image url in the html
+            Regex prntscRegex = new Regex(@"https://image\.prntscr\.com/image/([a-zA-Z0-9_-]+)\.[a-zA-Z]+");
+            Regex imgurRegex = new Regex(@"https://i\.imgur\.com/([a-zA-Z0-9_-]+)\.[a-zA-Z]+");
+
+            if (prntscRegex.IsMatch(prntscHtml)) imageUrl = prntscRegex.Match(prntscHtml).ToString(); //prnt.sc
+            else imageUrl = imgurRegex.Match(prntscHtml).ToString(); //imgur
+
+            return imageUrl.Length > 0 ? imageUrl : "No image link found. I am personally attacked by and blame you for this, " + Environment.UserName + ".";
         }
         public void ManageInput(string input, char key, bool IsId)
         {
@@ -59,7 +47,10 @@ namespace prntsc_viewer_because_cloudflare_is_a_bitch
                 UrlLabel.Text = GrabUrl(input, IsId);
                 ActiveForm.Width = UrlLabel.Width + 33;
                 ActiveForm.Height = 133;
-                if (BrowserCheckbox.Checked) { Process.Start(GrabUrl(input, IsId)); }
+                if (BrowserCheckbox.Checked && UrlLabel.Text != "No image link found. I am personally attacked by and blame you for this, " + Environment.UserName + ".")
+                {
+                    Process.Start(UrlLabel.Text);
+                }
             }
         }
         private void IdInput_KeyPress(object sender, KeyPressEventArgs e)
