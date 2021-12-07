@@ -1,0 +1,16 @@
+C:\Users\me\source\repos\prnt.sc-viewer\bin\Release\prnt.sc-imgflip-viewer.exe.config
+C:\Users\me\source\repos\prnt.sc-viewer\bin\Release\prnt.sc-imgflip-viewer.exe.manifest
+C:\Users\me\source\repos\prnt.sc-viewer\bin\Release\prnt.sc-imgflip-viewer.application
+C:\Users\me\source\repos\prnt.sc-viewer\bin\Release\prnt.sc-imgflip-viewer.exe
+C:\Users\me\source\repos\prnt.sc-viewer\bin\Release\prnt.sc-imgflip-viewer.pdb
+C:\Users\me\source\repos\prnt.sc-viewer\bin\Release\System.Diagnostics.DiagnosticSource.dll
+C:\Users\me\source\repos\prnt.sc-viewer\bin\Release\System.Diagnostics.DiagnosticSource.xml
+C:\Users\me\source\repos\prnt.sc-viewer\obj\Release\prntsc_imgflip_viewer.Form1.resources
+C:\Users\me\source\repos\prnt.sc-viewer\obj\Release\prntsc_imgflip_viewer.Properties.Resources.resources
+C:\Users\me\source\repos\prnt.sc-viewer\obj\Release\prnt.sc-imgflip-viewer.csproj.GenerateResource.cache
+C:\Users\me\source\repos\prnt.sc-viewer\obj\Release\prnt.sc-imgflip-viewer.csproj.CoreCompileInputs.cache
+C:\Users\me\source\repos\prnt.sc-viewer\obj\Release\prnt.sc-imgflip-viewer.exe.manifest
+C:\Users\me\source\repos\prnt.sc-viewer\obj\Release\prnt.sc-imgflip-viewer.application
+C:\Users\me\source\repos\prnt.sc-viewer\obj\Release\prnt.sc-imgflip-viewer.csproj.CopyComplete
+C:\Users\me\source\repos\prnt.sc-viewer\obj\Release\prnt.sc-imgflip-viewer.exe
+C:\Users\me\source\repos\prnt.sc-viewer\obj\Release\prnt.sc-imgflip-viewer.pdb
